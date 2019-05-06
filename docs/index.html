@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>CS184 Final Project</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+    <h1>Milestone Report</h1>
+    <h4>Rachael Boyle, Tyler Yath</h4>
+    <div class="main-text">
+      <h3>Video</h3>
+      <a href="https://youtu.be/jjuDe0rgNEU">Style Transferred Textures Video</a>
+    </div>
+    <div class="main-text">
+      <h3>Slides</h3>
+      <a href="https://docs.google.com/presentation/d/1rXhobd-35eR4RynAefMOnSGWVgvphNW5F0y8BsP3Kp0/edit?usp=sharing">Style Transferred Textures Slides</a>
+    </div>
+    <div class="main-text">
+      <h3>Accomplishments</h3>
+      <p>So far, we have built a working implementation of Neural Style Transfer based on the original Gatys et al. 2015 paper with a few tweaks. Most notably, we used the VGG19 CNN architecture rather than the VGG16 architecture described in the paper. We utilized a model pre trained on the ImageNet dataset to get this off of the ground and running quickly.</p>
+      <p>Thankfully, there were many tutorials online describing how to go about implementing Neural Style Transfer, and we found <a href="https://pytorch.org/tutorials/advanced/neural_style_tutorial.html">this</a> one to be very helpful. After a bit of fine tuning and quite a bit of trial and error, we were able to get some interesting early results that we will discuss in the Preliminary Results section.</p>
+      <p>We first began by running this code locally on the CPU, which was convenient for debugging but horribly inefficient for iteration on new style transfer ideas. However, this was solved by adding GPU support for our model, which was fairly straightforward in PyTorch, and running our model in a Google Cloud deep learning instance. We were able to get significant runtime speedup, from ~10 minutes on CPU to ~30 seconds on GPU.</p>
+    </div>
+    <div class="main-text">
+      <h3>Preliminary Results</h3>
+      <div class="image-container">
+        <img class="example" src="images/picasso.jpg">
+        <img class="example" src="images/dancing.jpg">
+        <img class="example" src="images/output_2.png">
+      </div>
+      <div class="image-container">
+        <img class="example" src="images/picasso.jpg">
+        <img class="example" src="images/yath_1.jpg">
+        <img class="example" src="images/output_12.png">
+      </div>
+      <div class="image-container">
+        <img class="example" src="images/sunset.jpeg">
+        <img class="example" src="images/eiffeltower.jpeg">
+        <img class="example" src="images/output_17.png">
+      </div>
+    </div>
+    <div class="main-text">
+      <h3>Reflection on Current Progress</h3>
+      <p>Currently, we are on track with our plans. Given the time constraints, we are quite proud of what we have been able to accomplish so far, but we definitely wish we could have had more time to explore some interesting ideas we came up with along the way.</p>
+    </div>
+    <div class="main-text">
+      <h3>Revisions to Our Plan</h3>
+      <p>Our current plan is to begin exploring some creative applications of style transfer with respect to generating bump maps, displacement maps, etc. If time allows, we hope to display some of the interesting results on a website with a Three.js component that will display our style transferred textures on 3D objects.</p>
+    </div>
+  </body>
+</html>
